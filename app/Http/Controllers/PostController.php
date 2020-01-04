@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post; //require('app/Post')
+use App\Http\Requests\StorePostRequest;
+
 class PostController extends Controller
 {
     function index () 
@@ -17,17 +19,13 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    function store()
+    function store(StorePostRequest $request)
     {
-        //alternative
-        // $post = new Post;
-        // $post->title = request()->title;
-        // $post->content = request()->content;
-        // $post->save();
-        
+                
         Post::create([
-            'title' => request()->title,
-            'description' => request()->description
+            'title' => $request->title,
+            'description' => $request->description,
+            'user_id' => $request->user()->id
         ]);
         return redirect()->route('posts.index');
     }
@@ -40,7 +38,7 @@ class PostController extends Controller
       ]);
     }
  
-    function update( Request $request,$post){
+    function update( StorePostRequest $request ,$post){
         $post = Post::find($post);
         $post->title = $request->title;
         $post->description = $request->description;

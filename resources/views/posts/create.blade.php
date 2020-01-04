@@ -1,7 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create Post</h1>
+    <h1 class = "text-center py-5 my-3">Create Post</h1>
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
     <form method="POST" class="col-8 text-center m-5 border p-5" action="/posts">
         @csrf
         <div class="form-group">
