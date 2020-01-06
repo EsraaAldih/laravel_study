@@ -29,7 +29,7 @@
             <td>{{$post['created_at']->format('d/m/Y')}}</td>
             <td class="d-flex text-justify ml-2">
             <a href="{{ route('posts.show',['post' => $post['id']]) }}"class="btn btn-success text-light rounded-pill px-3 mx-1" >View Details</a>
-            <a  href="{{ route('posts.edit',['post' => $post['id']]) }}" class="btn btn-info text-light rounded-pill px-3 mx-1">Edit</a>
+            <a  href="{{ route('posts.edit',['post' => $post['id']]) }}" class="btn btn-info text-light rounded-pill px-3 mx-1 pt-3">Edit</a>
             <form method="Post" action="/posts/{{$post->id}}" class="d-inline mx-1">
                   @csrf
                  @method('DELETE')

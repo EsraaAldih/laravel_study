@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "/var/www/html/blog/app"
+		},
+		{
+			"path": "/var/www/html/blog/bootstrap"
+		},
+		{
+			"path": "/var/www/html/blog/config"
+		},
+		{
+			"path": "/var/www/html/blog/database"
+		},
+		{
+			"path": "/var/www/html/blog/laravel_labs"
+		},
+		{
+			"path": "/var/www/html/blog/public"
+		},
+		{
+			"path": "/var/www/html/blog/resources"
+		},
+		{
+			"path": "/var/www/html/blog/routes"
+		},
+		{
+			"path": "/var/www/html/blog/storage"
+		},
+		{
+			"path": "/var/www/html/blog/tests"
+		},
+		{
+			"path": "/var/www/html/blog/vendor"
+		}
+	]
+}
