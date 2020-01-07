@@ -61,7 +61,12 @@ class LoginController extends Controller
         if ($authUser) {
             return $authUser;
         }
+        else if($user->nickname){
+            $user->name = $user->nickname;
+        }
         return User::create([
+
+            // 'name'     => $user->nickname,
             'name'     => $user->name,
             'email'    => $user->email,
             'provider' => $provider,
